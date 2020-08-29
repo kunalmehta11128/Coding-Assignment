@@ -37,7 +37,11 @@ class Main {
 		System.out.println("please enter T");
 
 		int t = sc.nextInt();
-
+		
+		if(t > 10 || t < 0) {
+			throw new MyException("t is grater than 10 or less than 0");
+		}
+		
 		for (int i = 0; i < t; i++) {
 			List<Long> list1 = new ArrayList<>();
 
@@ -45,11 +49,20 @@ class Main {
 
 			int n = sc.nextInt();
 
+			if(n > 100000 || n < 0) {
+				throw new MyException("n is grater than 100000 or less than 0");
+			}
+			
 			for (int j = 0; j < n; j++) {
 
-				System.out.println("please enter cost:" + j + 1);
-
+				System.out.println("please enter cost:");
+				
 				long cost = sc.nextLong();
+				
+				
+				if(cost > 1000000 || n < 0) {
+					throw new MyException("cost is grater than 1000000 or less than 0");
+				}
 				list1.add(cost);
 
 			}
